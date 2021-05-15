@@ -38,12 +38,20 @@ fetchContinent()
             </header>
             <div className="app-setting" style={{background: 'white'}}>
                 <div className="header">
-                    <img className="header-item " src={back}/>
+                    <img className="header-item " src={back}  onClick={()=>{
+                        history.push({
+                            pathname:'/'
+                        })
+                    }}/>
 
                     <div className="header-item text-setting">SELECT YOUR BEACH<br></br><span style={{fontSize: 12}}>World Wide</span>
                     </div>
 
-                    <img className="header-item " src={close}/>
+                    <img className="header-item " src={close} onClick={()=>{
+                        history.push({
+                            pathname:'/'
+                        })
+                    }}/>
 
                 </div>
 

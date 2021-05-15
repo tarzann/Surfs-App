@@ -42,14 +42,18 @@ const PlacePage = ({location,continent,place,history}) => {
                     <div className="header-item text-setting">SELECT YOUR BEACH<br></br><span style={{fontSize: 12}}>World Wide -{ continent }-{place}</span>
                     </div>
 
-                    <img className="header-item " src={close}/>
+                    <img className="header-item " src={close} onClick={()=>{
+                        history.push({
+                            pathname:'/'
+                        })
+                    }}/>
 
                 </div>
 
 
                 <ul>
                     {
-                        <CountryList lists={places}/>
+                        <CountryList  histories={history}  toWhere='/home' lists={places}/>
 
                     }
 

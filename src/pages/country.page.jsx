@@ -38,7 +38,11 @@ const CountryPage = ({country,location,fetchCountry,history}) => {
                     <div className="header-item text-setting">SELECT YOUR BEACH<br></br><span style={{fontSize: 12}}>World Wide - {location ? location.state.detail : null}</span>
                     </div>
 
-                    <img className="header-item " src={close}/>
+                    <img className="header-item " src={close} onClick={()=>{
+                        history.push({
+                            pathname:'/'
+                        })
+                    }} />
 
                 </div>
 

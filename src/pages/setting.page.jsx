@@ -9,9 +9,9 @@ import warm from '../images/icons8-warm.svg'
 import thermoMeter from '../images/icons8-thermometer.svg'
 import speed from '../images/icons8-speed.svg'
 import shipWheel from '../images/icons8-ship_wheel.svg'
+import {withRouter} from 'react-router-dom'
 
-
-const SettingPage = ({}) => {
+const SettingPage = ({history}) => {
     return (
         <div>
             <header style={{opacity: 0.7}}>
@@ -134,6 +134,12 @@ const SettingPage = ({}) => {
 
                         </div>
                         <div className="privacy">
+                            <div><a onClick={()=>{
+                                history.push({
+                                    pathname:'/continent'
+                                })
+                            }}>Change location</a></div>
+
                             <div><a href="#">Privacy Policy</a></div>
                             <div><a href="#">About</a></div>
                         </div>
@@ -144,4 +150,4 @@ const SettingPage = ({}) => {
     )
 }
 
-export default SettingPage
+export default withRouter(SettingPage)

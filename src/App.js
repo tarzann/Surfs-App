@@ -14,11 +14,11 @@ function App() {
 
 
         <Switch>
-            <Route exact path='/' component={HomePage}/>
+            <Route exact path='/' component={ContinentPage}/>
             <Route exact path='/Setting' component={SettingPage}/>
             <Route exact path='/country' component={CountryPage}/>
             <Route exact path='/place' component={PlacePage}/>
-            <Route exact path='/continent' component={ContinentPage}/>
+            <Route exact path='/home' component={HomePage}/>
         </Switch>
         <BottomNavbar/>
 

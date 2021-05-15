@@ -12,7 +12,8 @@ histories.push({
                     pathname:toWhere,
                     state:{
                         detail:list.name,
-                        continent:continent
+                        continent:continent,
+                        id:list.id?list.id:''
 
                     }
                 }):""            )} >{list.name}</li>

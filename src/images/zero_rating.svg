@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="75" height="15" viewBox="0 0 75 15">
+  <defs>
+    <image id="image" width="15" height="15" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAD0klEQVRYCeWWy2sTURTG750JqHk2kT6stQVfWBeKokXBx16XiiII6loEFddV/AMEoW5duVBQ3Hargk8oLsRX8dk2GqHWTJu20Gauv9POpK1JJpmoC3E4X86555zv3PdtlfrfP/t3FiCdTm9ZYdst0zMz3xqtE2mUKDxTLF5wbdtgnwANiW6IBSkWi7VFbPuj4pstFrsKhUIOM7RYoRkeIWJZZzCXCRiI2JjhpdEVWJ5KJj/TXTMQ+ZZ3nC6MaRBKrFDZXnIqlTqplJLOH6EfgxZ8J9ChpZEVsJj9K3raqLQ+gtbKmFvot6xCN9oFf0+SyeRBBmDAO3qRa2xjvweG2AF8oST0FrBk56QHbcw1dFHg2cqP4atb4FTPbW1tjXG9Om3bXmWMWU3mWggX0QWWvzOfz49hK/Y/zTYMYUeNUpeUUh+01iOu62aj0ehQLpcr4Kso1FOqiU+57nk2rwtHu4BCHTCSoEyI9/1wnCVXrymZ7INzuix53uHAGSaeBSMs+2dlWVd+8OGfz2AWh5jFDVrLgS8y8iH8X5nRsNH6C8s9Ys/M3B6dmhrxk0RnMpkOd3b2EDkd5LSxYh2sUhuxNSAGfJnGf5zVu+M7SropHt/PYRoDBjzkrU+Vgg0aUkNqAak5Rh/7AkuxEutIHgRCeEmBzkBCQFC41HkJpNag1A5IXwjJOw9pABj2NssR2boQrc8SjnClBhiQmvUxvazm5uY4xH4go/+eTiT2eqGaSnLh+VvZL7VqkiolcA1WsGx3KSaDGOeh2VUpb7EvkUjsJn8CGOFKjcXxX21uxK+uhfawUlOc1sN43oA4SINA4bZIjpz618KVGkGEwAF4RLmqa7C5wuoJupY8JkFy5fAKl2Z1qTkATvJm6FHw3nGc7+hA8XI+kBRNx2Ld6ECpOQCe07l9Zyoys1Ixb6+fstdPxS4F5o25XDcSmePOuyr/1hwAT/QOj/pMNAcxw/Xqs7S+T3unQGzxSYy2/FGay13EFXdFMLGK/pIzlUg85+ncahmzr6j1FgiXCWaAi/86Wv4fOIW2wKhRqtdy3RfGsu7Rfs7/CNvQVUVXjRBob2+PFiYm8pgRMAg2AEUnDzjtZznlA9Lmum3n7b9KsT3SBn7ubCweT2Wz2Ul84cV7UOQN8PGJzo5Sib74XSpaYpyJT8DPN9TwB7U022vJsnlmuWKmPZ53EvtiwnE2Metb+Gjyu1SMxJhxN8FLSqlJIKvVI7oaKs2klMtMbpKQKxpzeXx8fLQUqMPgZqy0te5lMC2cg2N1UMpTONXry73hPH+iRrge/7Xsn2PoLhHUaPIgAAAAAElFTkSuQmCC"/>
+  </defs>
+  <g id="zero_rating" transform="translate(-1498 -298)">
+    <use id="icons8_star_32px_1" transform="translate(1513 298)" xlink:href="#image"/>
+    <use id="icons8_star_32px_1-2" data-name="icons8_star_32px_1" transform="translate(1498 298)" xlink:href="#image"/>
+    <use id="icons8_star_32px_1-3" data-name="icons8_star_32px_1" transform="translate(1528 298)" xlink:href="#image"/>
+    <use id="icons8_star_32px_1-4" data-name="icons8_star_32px_1" transform="translate(1543 298)" xlink:href="#image"/>
+    <use id="icons8_star_32px_1-5" data-name="icons8_star_32px_1" transform="translate(1558 298)" xlink:href="#image"/>
+  </g>
+</svg>

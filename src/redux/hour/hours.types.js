@@ -1,0 +1,12 @@
+export const HoursActionTypes={
+
+
+    SHOW_HOURS_START: 'SHOW_HOURS_START',
+    SHOW_HOURS_SUCCESS: 'SHOW_HOURS_SUCCESS',
+    SHOW_HOURS_FAILURE: 'SHOW_HOURS_FAILURE',
+
+
+
+
+
+}
