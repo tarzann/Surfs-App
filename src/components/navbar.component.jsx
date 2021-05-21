@@ -8,7 +8,7 @@ const BottomNavbar = ({history}) => {
     return (
         <div>
             <div className="navbar">
-        <a href="#home" className="active"><img src={seeting_icon} onClick={()=>{
+        <a href="" className="active"><img src={seeting_icon} onClick={()=>{
             history.push({
                 pathname:'/Setting'
             })

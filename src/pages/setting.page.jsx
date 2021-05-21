@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import twentyOne from '../images/Component 21 – 1.svg'
 import men from '../images/icons8-male.svg'
 import female from '../images/icons8-female.svg'
@@ -12,6 +12,118 @@ import shipWheel from '../images/icons8-ship_wheel.svg'
 import {withRouter} from 'react-router-dom'
 
 const SettingPage = ({history}) => {
+    const[setting,setSetting]=useState({})
+
+
+    useEffect(async() => {
+        if(localStorage.getItem('userSetting')!==null) {
+            await setSetting(JSON.parse(localStorage.getItem('userSetting')))
+        } else{
+           await localStorage.setItem('userSetting',JSON.stringify({'gender':'Male','waveHeight':'M','temprature':'C','wind':'MPH','deviceType':await getMobileOperatingSystem(),'appVersion':'2.0.7','version':'pro','subscribed':'yes','guid':'1233','settingUrl':'asas'}))
+            await setSetting(JSON.parse(localStorage.getItem('userSetting')))
+
+        }
+
+    },[])
+
+
+    function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        // Windows Phone must come first because its UA also contains "Android"
+        if (/windows phone/i.test(userAgent)) {
+            return "Windows Phone";
+        }
+
+        if (/android/i.test(userAgent)) {
+            return "Android";
+        }
+
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            return "iOS";
+        }
+
+        return "PC";
+    }
+
+    const changeGender=(gender)=>{
+     let data=  JSON.parse(localStorage.getItem('userSetting'))
+        data.gender = gender
+        localStorage.setItem('userSetting',JSON.stringify(data))
+        setSetting(JSON.parse(localStorage.getItem('userSetting')))
+
+    }
+    const changeTemprature=(temprature)=>{
+        let data=  JSON.parse(localStorage.getItem('userSetting'))
+        data.temprature = temprature
+        localStorage.setItem('userSetting',JSON.stringify(data))
+        setSetting(JSON.parse(localStorage.getItem('userSetting')))
+
+    }
+    const changeWind=(wind)=>{
+        let data=  JSON.parse(localStorage.getItem('userSetting'))
+        data.wind = wind
+        localStorage.setItem('userSetting',JSON.stringify(data))
+        setSetting(JSON.parse(localStorage.getItem('userSetting')))
+
+    }
+    const changeWaveHeight=(waveHeight)=>{
+        let data=  JSON.parse(localStorage.getItem('userSetting'))
+        data.waveHeight = waveHeight
+        localStorage.setItem('userSetting',JSON.stringify(data))
+        setSetting(JSON.parse(localStorage.getItem('userSetting')))
+
+    }
+
+const getlocalData= (optionType,value)=>{
+    let data= setting
+    console.log("data type is"+data.optionType)
+    if(data.optionType===value){
+        // setBackground('#2B5D85')
+        return '#2B5D85'
+    }else{
+        // setBackground('none')
+
+        return 'none'
+    }
+}
+
+
+    const getGenderLocalData= (value)=>{
+        let data= setting
+        if(data.gender===value){
+            return '#2B5D85'
+        }else{
+            return 'none'
+        }
+    }
+    const getWaveHeightLocalData= (value)=>{
+        let data= setting
+        if(data.waveHeight===value){
+            return '#2B5D85'
+        }else{
+            return 'none'
+        }
+    }
+    const getWindLocalData= (value)=>{
+        let data= setting
+        if(data.wind===value){
+            return '#2B5D85'
+        }else{
+            return 'none'
+        }
+    }
+    const getTempratureLocalData= (value)=>{
+        let data= setting
+        if(data.temprature===value){
+            return '#2B5D85'
+        }else{
+            return 'none'
+        }
+    }
+
+
     return (
         <div>
             <header style={{opacity: 0.7}}>
@@ -24,7 +136,11 @@ const SettingPage = ({history}) => {
             <div className="app-setting">
                 <div className="header">
                     <div className="header-item text-setting">APP SETTINGS</div>
-                    <img className="header-item " src={twentyOne}/>
+                    <img className="header-item " src={twentyOne} onClick={()=>{
+                        history.push({
+                            pathname:'/'
+                        })
+                    }}/>
 
                 </div>
 
@@ -32,20 +148,26 @@ const SettingPage = ({history}) => {
                 <div className="box-one">
                     <div style={{fontSize: 14}}>GENDER</div>
                     <div className="box-one-content">
-                        <div className="box-one-item gender-male">
+                        <div className="box-one-item gender-male" style={{background:getGenderLocalData('Male')}}  onClick={()=>{
+                            changeGender('Male')
+                        }}>
 
-                            <img src={men} alt="male pic"/>
-
-                        </div>
-
-                        <div className="box-one-item gender-female">
-                            <img src={female}alt="male pic"/>
-
+                            <img src={men} name="male" alt="male pic"/>
 
                         </div>
-                        <div className="box-one-item gender-other">
 
-                            <img src={gender} alt="male pic"/>
+                        <div className="box-one-item gender-female"  style={{background:getGenderLocalData('Female')}} onClick={()=>{
+                            changeGender('Female')
+                        }}>
+                            <img src={female} name="female" alt="male pic" />
+
+
+                        </div>
+                        <div className="box-one-item gender-other" style={{background:getGenderLocalData('Other')}}  onClick={()=>{
+                            changeGender('Other')
+                        }}>
+
+                            <img src={gender}  name="other"  alt="male pic" />
 
                         </div>
                     </div>
@@ -61,65 +183,79 @@ const SettingPage = ({history}) => {
                 <div className="box-one">
                     <div style={{fontSize: 14}}>WAVE HEIGHT</div>
                     <div className="box-one-content">
-                        <div className="box-one-item gender-male">
+                        <div className="box-one-item gender-male" style={{background:getWaveHeightLocalData('F')}} onClick={()=>{
+                            changeWaveHeight('F')
+                        }}>
 
-                            <img src={shoePrint} alt="male pic"/>
+                            <img src={shoePrint} name='F' alt="male pic"/>
 
                         </div>
 
-                        <div className="box-one-item gender-female">
+                        <div className="box-one-item gender-female" style={{background:getWaveHeightLocalData('M')}}  onClick={()=>{
+                            changeWaveHeight('M')
+                        }}>
                             <img src={sewingTap} alt="male pic" />
 
 
 </div>
 
 </div>
-<div class=" box-one-content-text">
-<div class=" box-one-item" >less</div>
-<div class=" box-one-item" >meter</div>
+<div className=" box-one-content-text">
+<div className=" box-one-item" >feet</div>
+<div className=" box-one-item" >meter</div>
 
     </div>
 
     </div>
-    <div class=" box-one">
+    <div className=" box-one">
         <div style={{fontSize: 14}}>TEMPRATURE</div>
                         <div className="box-one-content">
-                            <div className="box-one-item gender-male">
+                            <div className="box-one-item gender-male" style={{background:getTempratureLocalData('C')}} onClick={()=>{
+                                changeTemprature('C')
+                            }}>
 
                                 <img src={warm} alt="male pic"/>
 
                             </div>
 
-                            <div className="box-one-item gender-female">
+                            <div className="box-one-item gender-female" style={{background:getTempratureLocalData('F')}} onClick={()=>{
+                                changeTemprature('F')
+                            }}>
                                 <img src={thermoMeter} alt="male pic" />
 
 
 </div>
 
 </div>
-<div class=" box-one-content-text">
-<div class=" box-one-item" >celcius</div>
-<div class=" box-one-item" >farehniet</div>
+<div className=" box-one-content-text">
+<div className=" box-one-item" >celcius</div>
+<div className=" box-one-item" >farehniet</div>
 
     </div>
 
     </div>
 
-    <div class=" box-one">
+    <div className=" box-one">
         <div style={{fontSize: 14}}>WIND</div>
                             <div className="box-one-content">
-                                <div className="box-one-item gender-male">
+                                <div className="box-one-item gender-male" style={{background:getWindLocalData('KPH')}} onClick={()=>{
+                                    changeWind('KPH')
+                                }}>
 
                                     <img src={speed} alt="male pic"/>
 
                                 </div>
 
-                                <div className="box-one-item gender-female">
+                                <div className="box-one-item gender-female" style={{background:getWindLocalData('MPH')}} onClick={()=>{
+                                    changeWind('MPH')
+                                }}>
                                     <img src={speed} alt="male pic"/>
 
 
                                 </div>
-                                <div className="box-one-item gender-other">
+                                <div className="box-one-item gender-other" style={{background:getWindLocalData('KNOTS')}} onClick={()=>{
+                                    changeWind('KNOTS')
+                                }}>
 
                                     <img src={shipWheel} alt="male pic"/>
 
@@ -140,8 +276,8 @@ const SettingPage = ({history}) => {
                                 })
                             }}>Change location</a></div>
 
-                            <div><a href="#">Privacy Policy</a></div>
-                            <div><a href="#">About</a></div>
+                            <div><a href="http://surfs-app.com/privacy-policy.html">Privacy Policy</a></div>
+                            <div><a href="http://surfs-app.com/support.html">About</a></div>
                         </div>
 
 

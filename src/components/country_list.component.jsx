@@ -1,22 +1,43 @@
-
 import React from 'react';
 
 
-const CountryList=({lists,histories,toWhere,continent})=>{
-console.log("coming list is"+lists.length)
-    return (
-        lists.map((list,nextList)=>(
-            <li onClick={()=>(
-                toWhere?
-histories.push({
-                    pathname:toWhere,
-                    state:{
-                        detail:list.name,
-                        continent:continent,
-                        id:list.id?list.id:''
+const CountryList = ({lists, histories, toWhere, continent}) => {
+    console.log("coming list is" + lists.length)
 
-                    }
-                }):""            )} >{list.name}</li>
+    const historyData =(pathname,detail,continent,id)=>{
+        histories.push({
+            pathname: pathname,
+            state: {
+                detail: detail,
+                continent: continent,
+                id: id ? id : ''
+
+            }
+        })
+        localStorage.setItem('lastLocationId',id)
+    }
+
+
+    return (
+        lists.map((list, nextList) => (
+            <li onClick={() => (
+
+                toWhere ?(
+                        // () => {
+                    historyData(toWhere,list.name,continent,list.id)
+                        // histories.push({
+                        //     pathname: toWhere,
+                        //     state: {
+                        //         detail: list.name,
+                        //         continent: continent,
+                        //         id: list.id ? list.id : ''
+                        //
+                        //     }
+                        // })
+                        // localStorage.setItem('lastLocationId',list.id)
+                   )
+
+                   : "")}>{list.name}</li>
 
         ))
     )

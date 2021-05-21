@@ -23,11 +23,21 @@ import {showHoursStart} from "../redux/hour/hours.actions";
 
 
 const HomePage = ({location, fetchHours, closestTime, todayHours, tomorrowHours, afterTomorrowHours,afterAfterTomorrowHours}) => {
-    // const [placesDetail, setPlacesDetail] = useState([])
+    const [lastLocationId, setLastLocationId] = useState('')
     // const [closestTime, setClosestTime] = useState({})
 
-    useEffect(() => {
-        fetchHours(location.state.id ? location.state.id : '')
+    useEffect(async() => {
+        if(localStorage.getItem('lastLocationId')!==null){
+            let id=await localStorage.getItem('lastLocationId')
+            setLastLocationId(id)
+            await fetchHours(id)
+        }else{
+           await fetchHours(location.state.id ? location.state.id : '')
+           await localStorage.setItem('lastLocationId',location.state.id)
+           await setLastLocationId(localStorage.getItem('lastLocationId'))
+
+
+        }
 
 
     }, [])
