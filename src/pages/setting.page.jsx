@@ -1,14 +1,23 @@
 import React,{useState,useEffect} from 'react'
 import twentyOne from '../images/Component 21 – 1.svg'
-import men from '../images/icons8-male.svg'
-import female from '../images/icons8-female.svg'
-import gender from '../images/icons8-gender.svg'
-import shoePrint from '../images/icons8-shoe_print.svg'
-import sewingTap from '../images/icons8-sewing_tape_measure.svg'
-import warm from '../images/icons8-warm.svg'
-import thermoMeter from '../images/icons8-thermometer.svg'
-import speed from '../images/icons8-speed.svg'
-import shipWheel from '../images/icons8-ship_wheel.svg'
+import men_white from '../images/icons8-male-white.svg'
+import men_black from '../images/icons8_male_black.svg'
+import female_black from '../images/icons8-female-black.svg'
+import female_white from '../images/icons8_female_white.svg'
+import gender_black from '../images/icons8-gender-black.svg'
+import gender_white from '../images/icons8_gender_white.svg'
+import shoePrint_black from '../images/icons8-shoe_print_black.svg'
+import shoePrint_white from '../images/icons8_shoe_print_white.svg'
+import sewingTap_white from '../images/icons8-sewing_tape_measure_white.svg'
+import sewingTap_black from '../images/icons8_Sewing_Tape_Measure_black.svg'
+import warm_white from '../images/icons8-warm-white.svg'
+import warm_black from '../images/icons8_warm_black.svg'
+import thermoMeter_black from '../images/icons8-thermometer-black.svg'
+import thermoMeter_white from '../images/icons8_thermometer_white.svg'
+import speed_black from '../images/icons8-speed-black.svg'
+import speed_white from '../images/icons8_speed_white.svg'
+import shipWheel_white from '../images/icons8-ship_wheel_white.svg'
+import shipWheel_black from '../images/icons8_ship_wheel_black.svg'
 import {withRouter} from 'react-router-dom'
 
 const SettingPage = ({history}) => {
@@ -30,7 +39,6 @@ const SettingPage = ({history}) => {
     function getMobileOperatingSystem() {
         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-        // Windows Phone must come first because its UA also contains "Android"
         if (/windows phone/i.test(userAgent)) {
             return "Windows Phone";
         }
@@ -39,7 +47,6 @@ const SettingPage = ({history}) => {
             return "Android";
         }
 
-        // iOS detection from: http://stackoverflow.com/a/9039885/177710
         if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
             return "iOS";
         }
@@ -98,6 +105,7 @@ const getlocalData= (optionType,value)=>{
             return 'none'
         }
     }
+
     const getWaveHeightLocalData= (value)=>{
         let data= setting
         if(data.waveHeight===value){
@@ -152,14 +160,14 @@ const getlocalData= (optionType,value)=>{
                             changeGender('Male')
                         }}>
 
-                            <img src={men} name="male" alt="male pic"/>
+                            <img src={setting.gender==='Male'?men_white:men_black} name="male" alt="male pic"/>
 
                         </div>
 
                         <div className="box-one-item gender-female"  style={{background:getGenderLocalData('Female')}} onClick={()=>{
                             changeGender('Female')
                         }}>
-                            <img src={female} name="female" alt="male pic" />
+                            <img src={setting.gender==='Female'?female_white:female_black} name="female" alt="male pic" />
 
 
                         </div>
@@ -167,7 +175,7 @@ const getlocalData= (optionType,value)=>{
                             changeGender('Other')
                         }}>
 
-                            <img src={gender}  name="other"  alt="male pic" />
+                            <img src={setting.gender==='Other'?gender_white:gender_black}  name="other"  alt="male pic" />
 
                         </div>
                     </div>
@@ -187,14 +195,14 @@ const getlocalData= (optionType,value)=>{
                             changeWaveHeight('F')
                         }}>
 
-                            <img src={shoePrint} name='F' alt="male pic"/>
+                            <img src={setting.waveHeight==='F'?shoePrint_white:shoePrint_black} name='F' alt="male pic"/>
 
                         </div>
 
                         <div className="box-one-item gender-female" style={{background:getWaveHeightLocalData('M')}}  onClick={()=>{
                             changeWaveHeight('M')
                         }}>
-                            <img src={sewingTap} alt="male pic" />
+                            <img src={setting.waveHeight==='M'?sewingTap_white:sewingTap_black} alt="male pic" />
 
 
 </div>
@@ -214,14 +222,14 @@ const getlocalData= (optionType,value)=>{
                                 changeTemprature('C')
                             }}>
 
-                                <img src={warm} alt="male pic"/>
+                                <img src={setting.temprature==='C'?warm_white:warm_black} alt="male pic"/>
 
                             </div>
 
                             <div className="box-one-item gender-female" style={{background:getTempratureLocalData('F')}} onClick={()=>{
                                 changeTemprature('F')
                             }}>
-                                <img src={thermoMeter} alt="male pic" />
+                                <img src={setting.temprature==='F'?thermoMeter_white:thermoMeter_black} alt="male pic" />
 
 
 </div>
@@ -242,14 +250,14 @@ const getlocalData= (optionType,value)=>{
                                     changeWind('KPH')
                                 }}>
 
-                                    <img src={speed} alt="male pic"/>
+                                    <img src={setting.wind==='KPH'?speed_white:speed_black} alt="male pic"/>
 
                                 </div>
 
                                 <div className="box-one-item gender-female" style={{background:getWindLocalData('MPH')}} onClick={()=>{
                                     changeWind('MPH')
                                 }}>
-                                    <img src={speed} alt="male pic"/>
+                                    <img src={setting.wind==='MPH'?speed_white:speed_black} alt="male pic"/>
 
 
                                 </div>
@@ -257,7 +265,7 @@ const getlocalData= (optionType,value)=>{
                                     changeWind('KNOTS')
                                 }}>
 
-                                    <img src={shipWheel} alt="male pic"/>
+                                    <img src={setting.wind==='KNOTS'?shipWheel_white:shipWheel_black} alt="male pic"/>
 
                                 </div>
                             </div>
