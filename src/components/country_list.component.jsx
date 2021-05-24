@@ -3,6 +3,10 @@ import React from 'react';
 
 const CountryList = ({lists, histories, toWhere, continent}) => {
     console.log("coming list is" + lists.length)
+    const setLocalStoredSettings=(toWhereData)=>{
+        return toWhereData==='/country'?localStorage.setItem('continent',continent):''
+
+    }
 
     const historyData =(pathname,detail,continent,id)=>{
         histories.push({
@@ -14,6 +18,7 @@ const CountryList = ({lists, histories, toWhere, continent}) => {
 
             }
         })
+        setLocalStoredSettings()
         localStorage.setItem('lastLocationId',id)
     }
 

@@ -280,7 +280,7 @@ const getlocalData= (optionType,value)=>{
                         <div className="privacy">
                             <div><a onClick={()=>{
                                 history.push({
-                                    pathname:'/continent'
+                                    pathname:'/'
                                 })
                             }}>Change location</a></div>
 

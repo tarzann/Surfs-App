@@ -14,7 +14,16 @@ const BottomNavbar = ({history}) => {
             })
 
         }} alt="seeting-icon" /></a>
-        <a href="#news"><img src={place_marker} alt="place-icon" /></a>
+        <a ><img src={place_marker} alt="place-icon" onClick={()=>{
+            history.push({
+                pathname: '/place',
+                state: {
+                    detail: localStorage.getItem('country'),
+                    continent: localStorage.getItem('continent'),
+
+                }
+            })
+        }} /></a>
         <a href="#contact"><img src={menu}  alt="menu-icon"/></a>
 
     </div>

@@ -62,7 +62,7 @@ fetchContinent()
                         // console.log("Hello"+continent)
 
 
-                        continent.length?<CountryList lists={continent} histories={history} toWhere='/country' />:'hello'
+                        continent.length?<CountryList lists={continent} histories={history} toWhere='/country' />:'Loading...'
 
                     }
 

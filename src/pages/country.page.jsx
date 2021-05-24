@@ -27,7 +27,7 @@ const CountryPage = ({country,location,fetchCountry,history}) => {
                 <div className="header">
                     <img className="header-item " src={back}  onClick={()=>{
                         history.push({
-                            pathname:'/continent',
+                            pathname:'/',
                             state:{
                                 detail:location ? location.state.detail : null
 
@@ -49,7 +49,7 @@ const CountryPage = ({country,location,fetchCountry,history}) => {
 
                 <ul>
                     {
-                            <CountryList lists={country} histories={history} continent={location.state.detail}  toWhere='/place'/>
+                        country.length?<CountryList lists={country} histories={history} continent={location.state.detail}  toWhere='/place'/>:"Loading..."
                     }
 
                 </ul>

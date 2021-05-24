@@ -14,6 +14,9 @@ const PlacePage = ({location,continent,place,history}) => {
         axios.post(`http://www.surfs-app.com/App/JSON/${continent}/${place}.json`)
             .then(response => {
                 setPlaces(response.data.countries.country)
+                localStorage.setItem('country',place)
+                localStorage.setItem('continent',continent)
+
                 // console.log(response.data.countries);
             })
 
@@ -53,7 +56,7 @@ const PlacePage = ({location,continent,place,history}) => {
 
                 <ul>
                     {
-                        <CountryList  histories={history}  toWhere='/home' lists={places}/>
+                       places.length? <CountryList  histories={history}  toWhere='/home' lists={places}/>:"Loading..."
 
                     }
 
