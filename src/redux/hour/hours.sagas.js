@@ -9,7 +9,7 @@ import {HoursActionTypes} from "./hours.types";
 
 export function* showHoursItems({payload: {id}}){
     try {
-        const response = yield axios.get(`http://surfs-app.com/siteTools/idDBhandler.php?cid=1&locid=${id}`)
+        const response = yield axios.get(`https://surfs-app.com/siteTools/idDBhandler.php?cid=1&locid=${id}`)
         yield console.log("status code is is" + JSON.stringify(response.data))
         if (response.status === 200) {
 
