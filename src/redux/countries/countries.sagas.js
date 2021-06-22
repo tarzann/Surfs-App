@@ -14,7 +14,7 @@ import axios from "axios";
 
 export function* showContinentItems({payload: {continent}}){
     try {
-        const response = yield axios.get(`http://www.surfs-app.com/App/JSON/${continent}/${continent}.json`)
+        const response = yield axios.get(`https://www.surfs-app.com/App/JSON/${continent}/${continent}.json`)
         yield console.log("status code is is" + JSON.stringify(response.data))
         if (response.status === 200) {
 
