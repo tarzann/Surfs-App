@@ -11,7 +11,7 @@ const PlacePage = ({location,continent,place,history}) => {
     place=location ? location.state.detail : null
     continent=location ? location.state.continent : null
     useEffect(()=>{
-        axios.post(`http://www.surfs-app.com/App/JSON/${continent}/${place}.json`)
+        axios.post(`https://www.surfs-app.com/App/JSON/${continent}/${place}.json`)
             .then(response => {
                 setPlaces(response.data.countries.country)
                 localStorage.setItem('country',place)
