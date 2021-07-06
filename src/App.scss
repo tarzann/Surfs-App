@@ -52,7 +52,7 @@ body {
 
 .card {
   display: flex;
-  width: 90%;
+  width: 95%;
   height: 90px;
 
   background: white;
@@ -112,7 +112,7 @@ body {
   width: 100px;
   height: 100px;
   background: white;
-  margin: 5px;
+  margin: 5px auto;
   border-radius: 10%;
 }
 
@@ -147,13 +147,13 @@ body {
   flex-wrap: nowrap;
   overflow-x: auto;
   //padding: 0.5em;
-  padding-top: 3.5em;
+  padding-top: 6.5em;
 }
 
 .all-hour-item {
-  width: 100px;
+  width: 104px;
   background: white;
-  margin: 5px;
+  margin-right: 7px;
 }
 
 .first-hour {
