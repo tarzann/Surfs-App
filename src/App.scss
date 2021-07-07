@@ -151,7 +151,7 @@ body {
 }
 
 .all-hour-item {
-  width: 104px;
+  min-width: 75px;
   background: white;
   margin-right: 7px;
 }
@@ -175,9 +175,9 @@ body {
   }
 
   .large-text {
-    font-size: 50px;
-    padding-left: 20px;
-    padding-right: 20px;
+    font-size: 40px;
+    //padding-left: 20px;
+    //padding-right: 20px;
   }
 
   span {
@@ -244,7 +244,7 @@ body {
   display: flex;
   background: grey;
   height: 80px;
-  width: 90%;
+  //width: 90%;
   text-align: center;
   margin: 10px;
 }
